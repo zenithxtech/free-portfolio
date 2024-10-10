@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --foreground: 240 55% 5%;
+        --background: 0 0% 98%;
+
+        --card: 0 0% 93%;
+        --border: 0 0% 88%;
+
+
+        --primary: 76 77% 63%;
+        --accent: 140 68% 74%;
+    }
+    .dark {
+        --foreground: 0 0% 98%;
+        --background: 240 55% 5%;
+
+        --card: 240 55% 10%;
+        --border: 240 55% 15%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply font-sans bg-background text-foreground antialiased;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-foreground/20 transition duration-150 hover:bg-foreground/40;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-card;
+    }
+}
